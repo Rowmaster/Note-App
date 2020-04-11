@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+
+	<meta charset="utf-8">
+	<title>Note-App</title>
+	<link href="style-sheet.css" type="text/css" rel="stylesheet">
+	
+</head>
+<body>
+
+	<!--Header Element, make a script for plus sign to add notes-->
+	<header>
+		<img onClick="openNav()" src="img/iconfinder_menu-alt_134216.png">
+		<img src="img/iconfinder_add_126583.png" align="right">
+	</header>
+	
+	<!--Sidenav contents, so what shows in side nav.-->
+	<div id="mySidenav" class="sidenav">
+		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+			<a href="#">Customize</a>
+			<!--# is a place holder value, will soon give ability to customize-->
+	</div>
+
+	<!--Sidenav script, opens and closes with animation-->
+	<script>
+		function openNav() {
+  			document.getElementById("mySidenav").style.width = "250px";
+			}
+
+		function closeNav() {
+  			document.getElementById("mySidenav").style.width = "0";
+			} 	
+	</script>
+	
+</body>
+</html>
