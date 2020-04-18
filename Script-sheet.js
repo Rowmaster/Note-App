@@ -16,14 +16,15 @@ function changeColor() {
 	document.getElementById('mySidenav').style.backgroundColor = color;
 	document.getElementById('mainHeader').style.backgroundColor = color;
 }
-		//Note Script
+		//Note Script, Adds a li element to an empty ui element
 function addNote(){
 	let note = prompt("Add your note","");
 	var para = document.createElement("li");
-	para.setAttribute("id", "note");
+	para.setAttribute("id", "noteTemp");
 	var node = document.createTextNode(note);
 	para.appendChild(node);
 	var element = document.getElementById("noteList");
 	element.appendChild(para);
-	$("#note").hide().appendTo( "#note" ).fadeIn( 'slow' );
+	$("#noteTemp").hide().appendTo( "#noteTemp" ).fadeIn( 'slow' );
+	para.setAttribute("id", "note");
 }
