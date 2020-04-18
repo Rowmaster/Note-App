@@ -1,8 +1,12 @@
 // JavaScript Document
-// Exported openNav, closeNav, changeColor, addNote
+//Exported openNav, closeNav, changeColor, addNote
+
+//Variables 
+var x = 0;
 
 
-		//Open Sidenav
+
+	//Open Sidenav
 function openNav() {
 	document.getElementById("mySidenav").style.width = "250px";
 }
@@ -18,6 +22,7 @@ function changeColor() {
 }
 		//Note Script, Adds a li element to an empty ui element
 function addNote(){
+	x++;
 	let note = prompt("Add your note","");
 	var para = document.createElement("li");
 	para.setAttribute("id", "noteTemp");
@@ -26,5 +31,16 @@ function addNote(){
 	var element = document.getElementById("noteList");
 	element.appendChild(para);
 	$("#noteTemp").hide().appendTo( "#noteTemp" ).fadeIn( 'slow' );
-	para.setAttribute("id", "note");
+	para.setAttribute("id", "note" + x);
+	para.setAttribute("onClick", "removeNote()");
+	return x;
+}
+
+function removeNote(){
+	document.getElementById("noteList").addEventListener("click",function(e) {
+  var tgt = e.target;
+  if (tgt.tagName.toUpperCase() === "LI") {
+    tgt.parentNode.removeChild(tgt); // or tgt.remove();
+ }
+});
 }
