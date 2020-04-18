@@ -10,7 +10,7 @@
 <body>
 
 	<!--Header Element, make a script for plus sign to add notes-->
-	<header>
+	<header id="mainHeader">
 		<img onClick="openNav()" src="img/iconfinder_menu-alt_134216.png">
 		<img src="img/iconfinder_add_126583.png" align="right">
 	</header>
@@ -18,7 +18,13 @@
 	<!--Sidenav contents, so what shows in side nav.-->
 	<div id="mySidenav" class="sidenav">
 		<a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-			<a href="#">Customize</a>
+	  <label>Background Color:</label>
+	  <input type="color" id="colorInputColor">
+	  <button type="button" onClick="changeColor()">
+		Click to change Color
+	  </button>
+	  
+
 			<!--# is a place holder value, will soon give ability to customize-->
 	</div>
 
@@ -30,8 +36,14 @@
 
 		function closeNav() {
   			document.getElementById("mySidenav").style.width = "0";
-			} 	
+			}
+		function changeColor() {
+			let color = document.getElementById("colorInputColor").value;
+			document.getElementById('mySidenav').style.backgroundColor = color;
+			document.getElementById('mainHeader').style.backgroundColor = color;
+		}
 	</script>
 	
+
 </body>
 </html>
