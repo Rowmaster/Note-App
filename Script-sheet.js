@@ -38,9 +38,9 @@ function addNote(){
 
 function removeNote(){
 	document.getElementById("noteList").addEventListener("click",function(e) {
-  var tgt = e.target;
-  if (tgt.tagName.toUpperCase() === "LI") {
-    tgt.parentNode.removeChild(tgt); // or tgt.remove();
+		var tgt = e.target;
+  		if (tgt.tagName.toUpperCase() === "LI") {
+    		tgt.parentNode.removeChild(tgt); // or tgt.remove();
  }
 });
 }
