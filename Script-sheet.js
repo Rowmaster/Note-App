@@ -16,14 +16,14 @@ function closeNav() {
 }
 		//Change the color of the header and sidenav
 function changeColor() {
-	let color = document.getElementById("colorInputColor").value;
+	var color = document.getElementById("colorInputColor").value;
 	document.getElementById('mySidenav').style.backgroundColor = color;
 	document.getElementById('mainHeader').style.backgroundColor = color;
 }
 		//Note Script, Adds a li element to an empty ui element
 function addNote(){
 	x++;
-	let note = prompt("Add your note","");
+	var note = prompt("Add your note","");
 	var para = document.createElement("li");
 	para.setAttribute("id", "noteTemp");
 	var node = document.createTextNode(note);
